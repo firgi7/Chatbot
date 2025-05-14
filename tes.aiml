@@ -1,0 +1,78 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<category>
+        <pattern>Halo</pattern>
+        <template>
+            Welcome to chatbot
+        </template>
+    </category>
+
+    <!-- Random penyanyi favorit -->
+    <category>
+        <pattern>SIAPA PENYANYI FAVORITEKU</pattern>
+        <template>
+            <random>
+                <li>John Mayer</li>
+                <li>Freddie Mercury</li>
+                <li>Hayley Williams</li>
+                <li>Chester Bennington</li>
+                <li>Bruno Mars</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- Menyimpan nama pengguna -->
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            <think><set name="username"><star/></set></think>
+            Hallo <get name="username"/>, nice to meet you!
+        </template>
+    </category>
+
+    <!-- Menjawab pertanyaan identitas -->
+    <category>
+        <pattern>DO YOU KNOW ME</pattern>
+        <template>
+            Sure buddy, you are <get name="username"/>.
+        </template>
+    </category>
+
+    <!-- Pertanyaan identitas lain diarahkan ke DO YOU KNOW ME -->
+    <category>
+        <pattern>WHO AM I</pattern>
+        <template>
+            <srai>DO YOU KNOW ME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO AM I JARVIS</pattern>
+        <template>
+            <srai>DO YOU KNOW ME</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DO YOU KNOW ME JARVIS</pattern>
+        <template>
+            <srai>DO YOU KNOW ME</srai>
+        </template>
+    </category>
+
+    <!-- Respon dasar -->
+    <category>
+        <pattern>APA KABAR</pattern>
+        <template>
+            Saya baik, terima kasih sudah bertanya!
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIAPA NAMAMU</pattern>
+        <template>
+            Namaku Jarvis, asisten virtualmu.
+        </template>
+    </category>
+
+</aiml>
